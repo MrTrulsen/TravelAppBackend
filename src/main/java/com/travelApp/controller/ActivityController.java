@@ -13,13 +13,10 @@ public class ActivityController {
     @Autowired
     private ActivityService activityService;
 
-
-    //Måtte her ta imot city som en del av body på grunn av at apache/tomcat ikke støtter ÆØÅ.
-    @RequestMapping(value = "/getActivities", method = RequestMethod.GET)
-    public List<DAOActivity> getAllLocations(@RequestBody String city) throws Exception {
-        return activityService.getActivityWithId(city);
+    @GetMapping(value = "/getActivities")
+    public List<DAOActivity> getAllLocations(@RequestParam String city) throws Exception {
+        return activityService.getActivityByCity(city);
     }
-
 
 }
 

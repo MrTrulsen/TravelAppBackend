@@ -27,12 +27,12 @@ public class ActivityService {
     }
 
     /**
-     * Get all activities.
+     * Get activities within a city.
      *
-     * @return a list of all activities.
+     * @return a list of all activities in a city.
      */
-    public List<DAOActivity> getActivityWithId(String city) {
-        return repository.findByActivityId(city);
+    public List<DAOActivity> getActivityByCity(String city) {
+        return repository.findActivityByCity(city);
     }
 
 }

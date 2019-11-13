@@ -60,6 +60,4 @@ public class DAOLocation {
         this.description = description;
     }
 
-
-
 }
