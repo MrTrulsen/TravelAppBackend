@@ -16,7 +16,26 @@ public class DAOUser {
 	@Column
 	@JsonIgnore
 	private String password;
+	@Column
+	private String currentCity;
+	@Column
+	private String displayName;
 
+	public String getCurrentCity() {
+		return currentCity;
+	}
+
+	public void setCurrentCity(String currentCity) {
+		this.currentCity = currentCity;
+	}
+
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}
 	public String getUsername() {
 		return username;
 	}

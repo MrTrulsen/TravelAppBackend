@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "hotel")
-public class DAOHotels {
+public class DAOHotel {
 
     @Id
     private String name;
@@ -17,14 +17,46 @@ public class DAOHotels {
     private String address;
     @Column
     private int price;
+    @Column
+    private String description;
+    @Column
+    private String url;
+    @Column
+    private Float rating;
 
-    public String getHotelName() {
+
+    public String getName() {
         return name;
     }
 
-    public void setHotelName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Float getRating() {
+        return rating;
+    }
+
+    public void setRating(Float rating) {
+        this.rating = rating;
+    }
+
 
     public String getImageUrl() {
         return imageUrl;
@@ -50,6 +82,4 @@ public class DAOHotels {
         this.price = price;
     }
 
-    //TODO later?
-    //private String website;
 }

@@ -1,6 +1,6 @@
 package com.travelApp.service;
 
-import com.travelApp.model.DAOHotels;
+import com.travelApp.model.DAOHotel;
 import com.travelApp.repository.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ public class HotelService {
      *
      * @return a list of all hotels.
      */
-    public List<DAOHotels> getAllHotels() {
+    public List<DAOHotel> getAllHotels() {
         return repository.findAll();
     }
 
@@ -31,7 +31,7 @@ public class HotelService {
      *
      * @return a list of all hotels.
      */
-    public List<DAOHotels> getHotelsByCity(String city) {
+    public List<DAOHotel> getHotelsByCity(String city) {
         return repository.findHotelsByCity(city);
     }
 
