@@ -1,5 +1,6 @@
 package com.travelApp.service;
 
+import com.travelApp.model.DAOUser;
 import com.travelApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,6 @@ public class UserService {
     public String getDisplayNameForUser(String username) { return repository.findDisplayNameForUser(username);
     }
 
-    public String getUserDetails(String username) { return repository.getUserDetails(username);
+    public DAOUser getUserDetails(String username) { return repository.getUserDetails(username);
     }
 }

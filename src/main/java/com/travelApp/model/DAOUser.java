@@ -12,14 +12,38 @@ public class DAOUser {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	@Column
+	@JsonIgnore
 	private String username;
 	@Column
 	@JsonIgnore
 	private String password;
 	@Column
+	@JsonIgnore
 	private String currentCity;
 	@Column
+	@JsonIgnore
 	private String displayName;
+	@Column
+	private String occupation;
+	@Column
+	@JsonIgnore
+	private String avatarImageUrl;
+
+	public String getOccupation() {
+		return occupation;
+	}
+
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
+
+	public String getAvatarImageUrl() {
+		return avatarImageUrl;
+	}
+
+	public void setAvatarImageUrl(String avatarImageUrl) {
+		this.avatarImageUrl = avatarImageUrl;
+	}
 
 	public String getCurrentCity() {
 		return currentCity;
