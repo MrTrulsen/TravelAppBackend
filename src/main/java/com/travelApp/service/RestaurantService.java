@@ -20,7 +20,7 @@ public class RestaurantService {
     /**
      * Get all restaurants with given city.
      *
-     * @return a list of all restaurant.
+     * @return a list of all restaurants.
      */
     public List<DAORestaurant> getRestaurantsByCity(String city) {
         return repository.findRestaurantsByCity(city);

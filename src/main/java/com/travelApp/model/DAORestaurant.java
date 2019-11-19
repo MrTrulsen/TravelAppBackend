@@ -21,6 +21,8 @@ public class DAORestaurant {
     private String url;
     @Column
     private Float rating;
+    @Column
+    private int phoneNumber;
 
     public int getPhoneNumber() {
         return phoneNumber;
@@ -29,9 +31,6 @@ public class DAORestaurant {
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
-    @Column
-    private int phoneNumber;
 
 
     public String getName() {

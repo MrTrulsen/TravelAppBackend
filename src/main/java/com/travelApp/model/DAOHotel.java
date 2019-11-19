@@ -24,7 +24,6 @@ public class DAOHotel {
     @Column
     private Float rating;
 
-
     public String getName() {
         return name;
     }
@@ -56,7 +55,6 @@ public class DAOHotel {
     public void setRating(Float rating) {
         this.rating = rating;
     }
-
 
     public String getImageUrl() {
         return imageUrl;

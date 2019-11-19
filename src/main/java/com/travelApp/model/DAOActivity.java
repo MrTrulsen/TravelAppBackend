@@ -22,6 +22,8 @@ public class DAOActivity {
     private int price;
     @Column
     private String imageUrl;
+    @Column
+    private String startTimes;
 
     public int getActivityId() {
         return activityId;
@@ -78,9 +80,5 @@ public class DAOActivity {
     public void setStartTimes(String startTimes) {
         this.startTimes = startTimes;
     }
-
-    @Column
-    private String startTimes;
-
 
 }

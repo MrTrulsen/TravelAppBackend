@@ -3,7 +3,6 @@ package com.travelApp.model;
 public class UserDTO {
 	private String username;
 	private String password;
-
 	private String currentCity;
 	private String displayName;
 	private String occupation;
@@ -32,7 +31,6 @@ public class UserDTO {
 	public void setDisplayName(String displayName) {
 		this.displayName = displayName;
 	}
-
 
 	public String getCurrentCity() {
 		return currentCity;

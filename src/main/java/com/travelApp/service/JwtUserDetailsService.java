@@ -21,6 +21,11 @@ public class JwtUserDetailsService implements UserDetailsService {
 	@Autowired
 	private PasswordEncoder bcryptEncoder;
 
+	/**
+	 * Loads user by username
+	 *
+	 * @return details of user.
+	 */
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		DAOUser user = userRepository.findByUsername(username);
@@ -30,7 +35,12 @@ public class JwtUserDetailsService implements UserDetailsService {
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
 				new ArrayList<>());
 	}
-	
+
+	/**
+	 * Saves the user
+	 * @param user user
+	 * @return user saved
+	 */
 	public DAOUser save(UserDTO user) {
 		DAOUser newUser = new DAOUser();
 		newUser.setUsername(user.getUsername());
