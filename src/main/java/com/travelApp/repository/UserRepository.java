@@ -1,10 +1,13 @@
 package com.travelApp.repository;
 
 import com.travelApp.model.DAOUser;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface UserRepository extends CrudRepository<DAOUser, Integer> {
@@ -28,4 +31,9 @@ public interface UserRepository extends CrudRepository<DAOUser, Integer> {
 
     @Query(value = "SELECT occupation FROM user u WHERE username=:username", nativeQuery = true)
     String getUserOccupation(String username);
+
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE user SET currentCity=:city WHERE username=:username", nativeQuery = true)
+    void setCurrentCity(String username, String city);
 }

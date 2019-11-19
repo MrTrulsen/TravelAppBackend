@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -42,6 +44,12 @@ public class UserController {
     public String getOccupation() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         return userService.getUserOccupation(auth.getName());
+    }
+
+    @PostMapping(value = "/setCurrentCity")
+    public void setNewCurrentCity(@RequestParam String city) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        userService.setNewCurrentCity(auth.getName(), city);
     }
 
 }
