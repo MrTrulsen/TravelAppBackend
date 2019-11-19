@@ -6,6 +6,24 @@ public class UserDTO {
 
 	private String currentCity;
 	private String displayName;
+	private String occupation;
+	private String avatarImageUrl;
+
+	public String getOccupation() {
+		return occupation;
+	}
+
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
+
+	public String getAvatarImageUrl() {
+		return avatarImageUrl;
+	}
+
+	public void setAvatarImageUrl(String avatarImageUrl) {
+		this.avatarImageUrl = avatarImageUrl;
+	}
 
 	public String getDisplayName() {
 		return displayName;

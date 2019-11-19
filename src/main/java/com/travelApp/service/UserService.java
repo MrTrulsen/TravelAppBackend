@@ -29,4 +29,10 @@ public class UserService {
 
     public DAOUser getUserDetails(String username) { return repository.getUserDetails(username);
     }
+
+    public String getUserAvatarImageUrl(String username) { return repository.getUserImageAvatarUrl(username);
+    }
+
+    public String getUserOccupation(String username) { return repository.getUserOccupation(username);
+    }
 }

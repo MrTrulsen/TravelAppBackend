@@ -22,4 +22,10 @@ public interface UserRepository extends CrudRepository<DAOUser, Integer> {
 
     @Query(value = "SELECT * FROM user u WHERE username=:username", nativeQuery = true)
     DAOUser getUserDetails(String username);
+
+    @Query(value = "SELECT avatarImageUrl FROM user u WHERE username=:username", nativeQuery = true)
+    String getUserImageAvatarUrl(String username);
+
+    @Query(value = "SELECT occupation FROM user u WHERE username=:username", nativeQuery = true)
+    String getUserOccupation(String username);
 }

@@ -1,6 +1,7 @@
 package com.travelApp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -48,6 +49,9 @@ public class JwtAuthenticationController {
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
+		if(user.getUsername() == "" || user.getPassword() == ""){
+			return new ResponseEntity<String>("username/password cannot be empty.",HttpStatus.BAD_REQUEST);
+		}
 		return ResponseEntity.ok(userDetailsService.save(user));
 	}
 

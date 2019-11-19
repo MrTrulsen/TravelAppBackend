@@ -26,11 +26,22 @@ public class UserController {
         return userService.getDisplayNameForUser(auth.getName());
     }
 
-    // TODO FIX this.
     @GetMapping(value = "/getUserDetails")
     public DAOUser getUserDetails() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         return userService.getUserDetails(auth.getName());
+    }
+
+    @GetMapping(value = "/getUserAvatarImageUrl")
+    public String getUserAvatarImageUrl() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return userService.getUserAvatarImageUrl(auth.getName());
+    }
+
+    @GetMapping(value = "/getOccupation")
+    public String getOccupation() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return userService.getUserOccupation(auth.getName());
     }
 
 }
