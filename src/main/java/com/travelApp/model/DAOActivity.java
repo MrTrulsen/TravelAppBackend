@@ -9,7 +9,6 @@ import javax.persistence.Table;
 @Table(name = "activity")
 public class DAOActivity {
 
-    //
     @Id
     private int activityId;
     @Column

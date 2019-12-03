@@ -35,4 +35,25 @@ public class ActivityService {
         return repository.findActivityByCity(city);
     }
 
+    /**
+     * Get users favorite activities.
+     *
+     * @return a list of favorite activities.
+     */
+    public List<DAOActivity> getUserFavorites(String username) { return repository.getUserFavorites(username);
+    }
+
+    /**
+     * Remove users favorite activities.
+     */
+    public void removeUserFavorites(String username, String activityName) { repository.removeUserFavorites(activityName,username);
+    }
+
+    /**
+     * Add user favorite activity.
+     * @param username
+     * @param activityName
+     */
+    public void addUserFavorites(String username, String activityName) { repository.addUserFavorites(activityName,username);
+    }
 }

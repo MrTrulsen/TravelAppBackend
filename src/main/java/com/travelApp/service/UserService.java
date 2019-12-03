@@ -56,6 +56,11 @@ public class UserService {
     public String getUserOccupation(String username) { return repository.getUserOccupation(username);
     }
 
+    /**
+     * Set currentCity for user
+     */
     public void setNewCurrentCity(String username, String city) { repository.setCurrentCity(username, city);
     }
+
+
 }
